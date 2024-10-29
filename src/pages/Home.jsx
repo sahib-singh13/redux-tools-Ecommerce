@@ -14,7 +14,7 @@ const Home = () => {
       const response = await fetch(API_URL);
       const data = await response.json();
       setData(data);
-      setCurrent(Array(data.length).fill(0)); 
+      setCurrent(Array(data.length).fill(0));
     } catch (error) {
       console.log("Error fetching data:", error);
     }
@@ -38,9 +38,11 @@ const Home = () => {
       {loading ? (
         <Spinner />
       ) : (
-        data.map((item) => (
-          <Product key={item.id} {...item} current={current} toggleCart={toggleCart} />
-        ))
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {data.map((item) => (
+            <Product key={item.id} {...item} current={current} toggleCart={toggleCart} />
+          ))}
+        </div>
       )}
     </>
   );
