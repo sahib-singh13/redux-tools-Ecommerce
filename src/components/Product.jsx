@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Product = ({ title, description, image, price, current, id, toggleCart }) => {
   return (
@@ -14,14 +15,18 @@ const Product = ({ title, description, image, price, current, id, toggleCart }) 
         <p className="text-lg font-medium text-gray-800 mb-4">Price: ${price}</p>
         {current[id] === 1 ? (
           <button
-            onClick={() => toggleCart(id)}
+            onClick={() => {
+              toggleCart(id);
+            }}
             className="px-4 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600"
           >
             Remove From Cart
           </button>
         ) : (
           <button
-            onClick={() => toggleCart(id)}
+            onClick={() => {
+             
+            }}
             className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600"
           >
             Add to Cart
