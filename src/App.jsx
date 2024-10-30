@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home"
 import Cart from "./pages/Cart"
+import toast, { Toaster } from 'react-hot-toast'
 const App = () => {
   return (
     <div>

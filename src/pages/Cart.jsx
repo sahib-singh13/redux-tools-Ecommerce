@@ -35,6 +35,8 @@ const Cart = () => {
             <span>Total Items: {cart.length}</span>
             <span>Total Cost: ${totalSum}</span>
             <button>Checkout</button>
+            <br/>
+            <button onClick={()=>navigate("/")}>ADD MORE</button>
           </div>
         </div>
       )}
